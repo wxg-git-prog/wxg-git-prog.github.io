@@ -23,7 +23,7 @@
     <link rel="alternative" href="/atom.xml" title="王薪贵的个人站" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/assets/bitbug_favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -53,7 +53,7 @@
 		  <h1 class="header-author"><a href="/">王薪贵的个人站</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">人生在勤，不索何获</p>
+		<p class="header-subtitle">“ 人生在勤，不索何获 ”</p>
 		
 
 		<nav class="header-menu">
@@ -61,12 +61,20 @@
 			
 				<li><a href="/">主页</a></li>
 	        
+				<li><a href="/tags/随笔/">目录</a></li>
+	        
+				<li><a href="/">-关于我-</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
             
     			
@@ -79,7 +87,7 @@
 				
 					<a class="github" target="_blank" href="https://github.com/wxg-git-prog" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="qq" target="_blank" href="https://user.qzone.qq.com/1508449781" title="qq"><i class="icon-qq"></i></a>
+					<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2604068029&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
 		        
 					<a class="bilibili" target="_blank" href="http://space.bilibili.com/161306618" title="bilibili"><i class="icon-bilibili"></i></a>
 		        
@@ -105,9 +113,13 @@
 			  <h1 class="header-author js-header-author">王薪贵的个人站</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>人生在勤，不索何获<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>“ 人生在勤，不索何获 ”<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
+			
+				
 			
 				
 			
@@ -118,7 +130,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/wxg-git-prog" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="qq" target="_blank" href="https://user.qzone.qq.com/1508449781" title="qq"><i class="icon-qq"></i></a>
+						<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2604068029&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
 			        
 						<a class="bilibili" target="_blank" href="http://space.bilibili.com/161306618" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
@@ -126,10 +138,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 100%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">目录</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/">-关于我-</a></li>
 		        
 				</ul>
 			</nav>
@@ -251,17 +267,25 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -328,6 +352,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://pengzhihui.xyz/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>彭稚晖的个人站</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     
