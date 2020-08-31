@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | 王薪贵的个人站</title>
+  <title>串口通信全解（一） | 王薪贵的个人站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="苏州大学光电科学与工程学院电子信息科学与技术专业">
-<meta name="keywords" content="FPGA,程序设计">
-<meta property="og:type" content="website">
-<meta property="og:title" content="王薪贵的个人站">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="串口通信全解（一）大部分人第一次接触串口通信应该都是单片机和PC的通讯，单片机只需要使用一根USB线和电脑连接起来，写好代码之后，通过串口助手就可以和PC实现数据的收发。由于是在设计好的开发板上实现的，很多过程容易被我们忽略，很多人对串口通讯的概念也都比较模糊，但是串口通信在实际的应用中非常广泛，需要我们有比较深刻的理解。经过一段时间的学习，自认为对串口通信的概念有了比较清晰的认识，想在这里和大家">
+<meta name="keywords" content="设备通讯">
+<meta property="og:type" content="article">
+<meta property="og:title" content="串口通信全解（一）">
+<meta property="og:url" content="http://yoursite.com/2020/09/01/串口通信全解（一）/index.html">
 <meta property="og:site_name" content="王薪贵的个人站">
-<meta property="og:description" content="苏州大学光电科学与工程学院电子信息科学与技术专业">
+<meta property="og:description" content="串口通信全解（一）大部分人第一次接触串口通信应该都是单片机和PC的通讯，单片机只需要使用一根USB线和电脑连接起来，写好代码之后，通过串口助手就可以和PC实现数据的收发。由于是在设计好的开发板上实现的，很多过程容易被我们忽略，很多人对串口通讯的概念也都比较模糊，但是串口通信在实际的应用中非常广泛，需要我们有比较深刻的理解。经过一段时间的学习，自认为对串口通信的概念有了比较清晰的认识，想在这里和大家">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/photo/VN1.png">
+<meta property="og:image" content="http://yoursite.com/photo/sheet.png">
+<meta property="og:updated_time" content="2020-08-07T12:04:46.643Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="王薪贵的个人站">
-<meta name="twitter:description" content="苏州大学光电科学与工程学院电子信息科学与技术专业">
+<meta name="twitter:title" content="串口通信全解（一）">
+<meta name="twitter:description" content="串口通信全解（一）大部分人第一次接触串口通信应该都是单片机和PC的通讯，单片机只需要使用一根USB线和电脑连接起来，写好代码之后，通过串口助手就可以和PC实现数据的收发。由于是在设计好的开发板上实现的，很多过程容易被我们忽略，很多人对串口通讯的概念也都比较模糊，但是串口通信在实际的应用中非常广泛，需要我们有比较深刻的理解。经过一段时间的学习，自认为对串口通信的概念有了比较清晰的认识，想在这里和大家">
+<meta name="twitter:image" content="http://yoursite.com/photo/VN1.png">
   
     <link rel="alternative" href="/atom.xml" title="王薪贵的个人站" type="application/atom+xml">
   
@@ -164,36 +168,111 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-串口通信全解（一）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      串口通信全解（一）
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/01/串口通信全解（一）/" class="archive-article-date">
+
+        
+        <a href="/2020/09/01/串口通信全解（一）/" class="archive-article-date">
   	<time datetime="2020-08-31T21:02:14.892Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-01</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/01/串口通信全解（一）/">串口通信全解（一）</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="串口通信全解（一）"><a href="#串口通信全解（一）" class="headerlink" title="串口通信全解（一）"></a>串口通信全解（一）</h1><p>大部分人第一次接触串口通信应该都是单片机和PC的通讯，单片机只需要使用一根USB线和电脑连接起来，写好代码之后，通过串口助手就可以和PC实现数据的收发。由于是在设计好的开发板上实现的，很多过程容易被我们忽略，很多人对串口通讯的概念也都比较模糊，但是串口通信在实际的应用中非常广泛，需要我们有比较深刻的理解。经过一段时间的学习，自认为对串口通信的概念有了比较清晰的认识，想在这里和大家分享一下，欢迎批评指正。</p>
+<h2 id="一、串口通信、串行通信和通用串行总线"><a href="#一、串口通信、串行通信和通用串行总线" class="headerlink" title="一、串口通信、串行通信和通用串行总线"></a>一、串口通信、串行通信和通用串行总线</h2><p>串口通信、串行通信和通用串行总线是几个非常用易混淆的概念。</p>
+<p>其中，通用串行总线是USB的全称，与串口通信关系不大，在这里不作详细介绍。</p>
+<p>串行通信包括了异步通信和同步通信。同步通信受时钟信号控制，要求发送端和接收端的时钟信号频率保持一致（时钟同步），由发送端将数据组合起来一起发送，比如I2C和SPI的传输方式。而异步通信每次只发送一个字符的一个比特位，对时钟信号频率没有要求。显然，同步通讯的效率更高，但是稳定性较差，而异步通信虽然效率低，但是可以允许一定的误差。</p>
+<p>串口通信是利用串口进行通信的方式，它是一种异步通信，即串口通信是串行通信的一种实现方式。</p>
+<p><img src="/photo/VN1.png" alt="image-20200807181533010"></p>
+<a id="more"></a>
+<h2 id="二、RS232、RS485是什么？"><a href="#二、RS232、RS485是什么？" class="headerlink" title="二、RS232、RS485是什么？"></a>二、RS232、RS485是什么？</h2><p>只要你接触到了串口通讯，一定都听说过RS232、RS485这些概念。大部分人刚遇到这些概念的时候应该都是一头雾水，百度搜索之后也未必能解决自己的困惑。我在进行FPGA通信开发时，最先使用的通信模块上包含了两个RS232模块和两个RS485模块，它们是什么意思，有什么区别？</p>
+<p>也许你不理解232、485的含义，但是对TTL一定不会陌生。</p>
+<p>TTL是用在数字逻辑电路中一种逻辑电平标准，根据电压值的范围来转换成逻辑的0和1，一般情况下，当电压值大于2.4V时，逻辑为1，电压值小于0.4V时，逻辑为0。</p>
+<p>RS232和RS485也是一种电平标准，由于TTL抗干扰能力有局限性，在串口通信中广泛采用的是RS232和RS485等电平标准，他们都有各自的特点。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">RS232</th>
+<th align="center">RS485</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>接口结构</td>
+<td align="center">RS232接口一般采用RXD、TXD、GND三条线</td>
+<td align="center">无具体物理形状，最少使用两根线</td>
+</tr>
+<tr>
+<td>接口电器特性</td>
+<td align="center">信号“1”为“-3V ~ -15V”，信号”0”为“3V ~ 15V”</td>
+<td align="center">信号“1”为“2V ~ 6V”，信号”0”为“-2V ~ -6V”</td>
+</tr>
+<tr>
+<td>传输距离</td>
+<td align="center">最大传输距离标准值为15米</td>
+<td align="center">最大传输距离标准值为120米，实际上可达3000米</td>
+</tr>
+<tr>
+<td>传输速率</td>
+<td align="center">最高波特率为19200bps</td>
+<td align="center">最高波特率为10Mbps</td>
+</tr>
+</tbody></table>
+<p>RS232为了提高抗干扰能力，增大了电压值的区分度，引入了负值电压，因为需要准确测量具体的电压值，就必须需要使用地线来设置零电位。RS232的接口相对固定，在老式计算机上非常常见。随着数据传输距离的增加，干扰越来越难以估计，在这种情况下，RS485在增大区分度的基础上还引入了差分信号，生成的逻辑值与两条信号线电压的差值有关，因此，与RS232的全双工不同，RS485通信是一种半双工的通信方式。</p>
+<h2 id="三、如何实现主从设备逻辑电平标准匹配"><a href="#三、如何实现主从设备逻辑电平标准匹配" class="headerlink" title="三、如何实现主从设备逻辑电平标准匹配"></a>三、如何实现主从设备逻辑电平标准匹配</h2><p>介绍完了逻辑电平标准，大家可以思考这样一个问题：为什么使用TTL标准的单片机可以实现RS232、RS485标准的串口通信？</p>
+<p>这里以蓝桥杯单片机开发板为例，通过查看单片机开发板的原理图可知，USB发送的数据并不是直接传输给单片机进行处理的，而是经过了一个由CH340芯片构成的模块，具体电路连接如下图所示。</p>
+<p><img src="/photo/sheet.png" alt="sheet"></p>
+<p>通过查阅CH340C芯片手册得知，CH340是一个USB的转接芯片，实现USB转串口（UART），USB转IrDA红外或者USB转打印口，这里显然用作USB转串口功能。USB传输线的逻辑信号进入CH340C芯片UD+、UD-后，由芯片输出TTL电平TXD、RXD分别与单片机引脚P30、P31相连，实现了USB/串口的通信。</p>
+<p>同理，使用MAX3232和MAX3485等转接芯片，可以实现各种逻辑电平标准匹配。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>扫这个请我恰汉堡<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/blogImg/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/blogImg/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -205,100 +284,134 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/09/01/串口通信全解（一）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/01/hello-world/" class="archive-article-date">
-  	<time datetime="2020-08-31T21:00:28.670Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/01/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/01/hello-world/">Hello World</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">生日快乐</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/08/05/2020-08-05/" class="archive-article-date">
-  	<time datetime="2020-08-05T15:17:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/05/2020-08-05/">前言</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">FPGA</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设备通讯</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
 
+  
+
+  
+
+
+
+   
+       <section id="comments" class="comments">
+         <style>
+           .comments{margin:30px;padding:10px;background:#fff}
+           @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+         </style>
+         <div id="vcomment" class="comment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var notify = 'false' == true ? true : false;
+  var verify = 'false' == true ? true : false;
+  new Valine({
+    av: AV,
+    el: '#vcomment',
+    notify: notify,
+    app_id: "r4mQT4d1H7yK6mvMWBC4ujVl-gzGzoHsz",
+    app_key: "UWvPBE6xkdtCgzf26ssyqztV",
+    placeholder: "Just go go",
+    avatar: "mm",
+  });
+</script>
+     </section>
+   
 
           </div>
         </div>
@@ -322,8 +435,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
