@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>串口通信全解（三） | 王薪贵的个人站</title>
+  <title>Archives: 2021/6 | 王薪贵的个人站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="串口通信全解（三）介绍完了串口通信的基础和通信时序，已经可以实现数据的传输。本文要介绍的通信协议是通信双方对传输数据格式的一种规则和约定，相当于机器和机器之间交流的语言。有了通信协议，不仅可以增加通信的可靠性，还可以实现更多的功能。接下来将使用MODBUS-RTU工控协议作例子进行讲解。 MODBUS-RTU简介Modbus是一种串行通信协议，是Modicon公司（现在的施耐德电气 Schneid">
-<meta name="keywords" content="设备通信">
-<meta property="og:type" content="article">
-<meta property="og:title" content="串口通信全解（三）">
-<meta property="og:url" content="http://yoursite.com/2021/05/25/串口通信全解（三）/index.html">
+  <meta name="description" content="苏州大学光电科学与工程学院电子信息科学与技术专业">
+<meta name="keywords" content="FPGA,程序设计">
+<meta property="og:type" content="website">
+<meta property="og:title" content="王薪贵的个人站">
+<meta property="og:url" content="http://yoursite.com/archives/2021/06/index.html">
 <meta property="og:site_name" content="王薪贵的个人站">
-<meta property="og:description" content="串口通信全解（三）介绍完了串口通信的基础和通信时序，已经可以实现数据的传输。本文要介绍的通信协议是通信双方对传输数据格式的一种规则和约定，相当于机器和机器之间交流的语言。有了通信协议，不仅可以增加通信的可靠性，还可以实现更多的功能。接下来将使用MODBUS-RTU工控协议作例子进行讲解。 MODBUS-RTU简介Modbus是一种串行通信协议，是Modicon公司（现在的施耐德电气 Schneid">
+<meta property="og:description" content="苏州大学光电科学与工程学院电子信息科学与技术专业">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2021-06-11T03:08:56.963Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="串口通信全解（三）">
-<meta name="twitter:description" content="串口通信全解（三）介绍完了串口通信的基础和通信时序，已经可以实现数据的传输。本文要介绍的通信协议是通信双方对传输数据格式的一种规则和约定，相当于机器和机器之间交流的语言。有了通信协议，不仅可以增加通信的可靠性，还可以实现更多的功能。接下来将使用MODBUS-RTU工控协议作例子进行讲解。 MODBUS-RTU简介Modbus是一种串行通信协议，是Modicon公司（现在的施耐德电气 Schneid">
+<meta name="twitter:title" content="王薪贵的个人站">
+<meta name="twitter:description" content="苏州大学光电科学与工程学院电子信息科学与技术专业">
   
     <link rel="alternative" href="/atom.xml" title="王薪贵的个人站" type="application/atom+xml">
   
@@ -165,147 +164,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-串口通信全解（三）" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      串口通信全解（三）
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/06/11/串口通信全解（三）/" class="archive-article-date">
+  	<time datetime="2021-06-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-11</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/06/11/串口通信全解（三）/">串口通信全解（三）</a>
     </h1>
   
 
-        
-        <a href="/2021/05/25/串口通信全解（三）/" class="archive-article-date">
-  	<time datetime="2021-05-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="串口通信全解（三）"><a href="#串口通信全解（三）" class="headerlink" title="串口通信全解（三）"></a>串口通信全解（三）</h1><p>介绍完了串口通信的基础和通信时序，已经可以实现数据的传输。本文要介绍的通信协议是通信双方对传输数据格式的一种规则和约定，相当于机器和机器之间交流的语言。有了通信协议，不仅可以增加通信的可靠性，还可以实现更多的功能。接下来将使用MODBUS-RTU工控协议作例子进行讲解。</p>
-<h2 id="MODBUS-RTU简介"><a href="#MODBUS-RTU简介" class="headerlink" title="MODBUS-RTU简介"></a>MODBUS-RTU简介</h2><p>Modbus是一种<strong>串行通信协议</strong>，是Modicon公司（现在的施耐德电气 Schneider Electric）于1979年为使用可编程逻辑控制器（PLC）通信而发表。<strong>Modbus已经成为工业领域通信协议的业界标准（Defacto），并且现在是工业电子设备之间常用的连接方式。</strong>如果要开发工控设备，学习和能够使用MODBUS协议十分重要。</p>
-<p>Modbus协议目前存在用于<a href="https://baike.baidu.com/item/%E4%B8%B2%E5%8F%A3" target="_blank" rel="noopener">串口</a>、<a href="https://baike.baidu.com/item/%E4%BB%A5%E5%A4%AA%E7%BD%91" target="_blank" rel="noopener">以太网</a>以及其他支持<a href="https://baike.baidu.com/item/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">互联网协议</a>的网络的版本。串口的Modbus协议包括Modbus RTU和Modbus ASCII。以太网的Modbus协议主要是Modbus-TCP。</p>
-<p>本人目前使用的是MODBUS-RTU协议。</p>
-<h2 id="MODBUS-RTU结构"><a href="#MODBUS-RTU结构" class="headerlink" title="MODBUS-RTU结构"></a>MODBUS-RTU结构</h2><p>MODBUS-RTU的协议结构由<strong>“设备地址 + 功能码 + 数据码 + 校验码”</strong>组成。</p>
-<ul>
-<li><p><strong>设备地址：</strong> 长度为一个字节。范围是0-255（其中有效范围是1-247，其他有特殊用途，比如255是广播地址)，意义在于选择应答此次指令的从设备，相当于先点名来指派任务。</p>
-</li>
-<li><p><strong>功能码：</strong> 长度为一个字节。不同功能码对应不同功能，发送了功能码，就相当于告诉了从设备将要执行的任务类型。常用功能码有03和06，03功能为读取设备寄存器数据，06功能为将数据写入寄存器。</p>
-</li>
-<li><p><strong>数据码：</strong>一般占用四个字节。根据功能码不同，有不同结构，将会在后续的实例中进行说明。</p>
-</li>
-<li><p><strong>校验码：</strong>占用两个字节。为了保证指令没有发生错误，需要把前面的数据进行计算看数据是否一致，如果一致，就说明这帧数据是正确的，再进行回复。如果不一样，说明这帧数据在传输的时候出了问题，不需要进行操作。MODBUS-RTU的校验码为CRC校验。</p>
-</li>
-</ul>
-<p>下面使用两种常用的功能码进行举例说明MODBUS-RTU的数据包结构。</p>
-<a id="more"></a>
-
-<h3 id="（1）03功能（读寄存器操作）"><a href="#（1）03功能（读寄存器操作）" class="headerlink" title="（1）03功能（读寄存器操作）"></a>（1）03功能（读寄存器操作）</h3><p>数据包格式:</p>
-<table>
-<thead>
-<tr>
-<th align="center">设备地址</th>
-<th>功能码</th>
-<th align="center">起始地址（高位）</th>
-<th align="center">起始地址（低位）</th>
-<th align="center">寄存器个数（高位）</th>
-<th align="center">寄存器个数（低位）</th>
-<th align="center">CRC校验码（高位）</th>
-<th align="center">CRC校验码（低位）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">0x01</td>
-<td>0x03</td>
-<td align="center">0x00</td>
-<td align="center">0x02</td>
-<td align="center">0x00</td>
-<td align="center">0x03</td>
-<td align="center">0xA4</td>
-<td align="center">0x0B</td>
-</tr>
-</tbody></table>
-<p>此数据包功能表示为<strong>从0x01编号从设备的第0x0002个寄存器地址开始，往后读取0x0003个寄存器的值，CRC 码用于校验</strong>。</p>
-<p>返回数据形式为<strong>设备地址+功能码（03）+读取的字节长度（为寄存器个数的2倍）+读取到的寄存器值+CRC校验码</strong></p>
-<p>本例返回值为:</p>
-<p>0x01    0x03    0x06    0xXX    0xXX    0xXX    0xXX    0xXX    0xXX    CRC(H)    CRC(L)</p>
-<h3 id="（2）06功能（写寄存器操作）"><a href="#（2）06功能（写寄存器操作）" class="headerlink" title="（2）06功能（写寄存器操作）"></a>（2）06功能（写寄存器操作）</h3><p>数据包格式:</p>
-<table>
-<thead>
-<tr>
-<th align="center">设备地址</th>
-<th align="center">功能码</th>
-<th align="center">目标地址（高位）</th>
-<th align="center">目标地址（低位）</th>
-<th align="center">写入数据（高位）</th>
-<th align="center">写入数据（低位）</th>
-<th align="center">CRC校验码（高位）</th>
-<th align="center">CRC校验码（低位）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">0x01</td>
-<td align="center">0x06</td>
-<td align="center">0x00</td>
-<td align="center">0x3C</td>
-<td align="center">0x01</td>
-<td align="center">0x90</td>
-<td align="center">0x48</td>
-<td align="center">0x3A</td>
-</tr>
-</tbody></table>
-<p>此数据包功能表示为<strong>在0x01编号的从设备地址为0x003C寄存器中写入数据0x0190，CRC码用于校验</strong>。</p>
-<p>从设备响应的返回数据和接收到的数据包相同。</p>
-<p>本例返回值为:</p>
-<p>0x01    0x06    0x00    0x3C    0x01    0x90    0x48    CRC(H)    CRC(L)</p>
-<h2 id="CRC码"><a href="#CRC码" class="headerlink" title="CRC码"></a>CRC码</h2><p>CRC码全称为循环冗余校验码，因为数据包的每一位数据都将参与CRC码计算，对结果产生很大影响，所以CRC码可以检测出多位错误。</p>
-<p>现给出一种Verilog书写的CRC码计算方法。</p>
-<p>初始化CRC校验码为‘0xFFFF’，每有一个字节接收过来后，与当前CRC校验码的低位进行异或运算，进行八次右移。如果移除的位是‘1’，再使用‘0xA001’进行异或；如果移除的位是‘0’，不进行操作。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">//对缓存器中所有的数据进行计算得到CRC码</span><br><span class="line"></span><br><span class="line">module CRC_generator(en,num,data_in,CLK,CRC_out,cnt,over,N,start);</span><br><span class="line"></span><br><span class="line">input CLK,en;</span><br><span class="line">input [7:0] data_in;</span><br><span class="line">input [7:0] num;</span><br><span class="line">output reg [15:0] CRC_out;</span><br><span class="line">output reg [3:0]cnt;</span><br><span class="line">output reg over,start;</span><br><span class="line">output reg [7:0] N;</span><br><span class="line">reg enbuf,enrise,enfall,error;</span><br><span class="line"></span><br><span class="line">initial</span><br><span class="line">begin</span><br><span class="line">enbuf = 0;</span><br><span class="line">enrise = 0;</span><br><span class="line">over = 0;</span><br><span class="line">N = 8&apos;b00000000;</span><br><span class="line">cnt = 4&apos;b0000;</span><br><span class="line">CRC_out = 16&apos;b1111111111111111;</span><br><span class="line">error = 0;</span><br><span class="line">start = 0;</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">//en(数据传输完毕指示信号)的下降沿检测, 下降沿出现表示开始了下一次通信</span><br><span class="line">always @(posedge CLK)   </span><br><span class="line">begin</span><br><span class="line">  enbuf &lt;= en;</span><br><span class="line">  enfall &lt;= (~en) &amp; enbuf;</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">always @(posedge CLK)</span><br><span class="line">begin</span><br><span class="line"></span><br><span class="line">//新字节和低八位异或</span><br><span class="line">if((en ==1)&amp;&amp;(N &lt; num-2)&amp;&amp;(start == 0)&amp;&amp;(over == 0)&amp;&amp;(num != 0))//num-2表示最后两位不参与运算</span><br><span class="line">begin</span><br><span class="line">	CRC_out[7:0] = CRC_out[7:0] ^ data_in;</span><br><span class="line">	start = 1;//移位操作准备开始</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">///八次移位操作开始</span><br><span class="line">else if(start == 1)</span><br><span class="line">begin</span><br><span class="line"></span><br><span class="line">	if(cnt &lt; 4&apos;b1000)</span><br><span class="line">	begin</span><br><span class="line">	</span><br><span class="line">		if(CRC_out[0] == 1)//移除的位是1</span><br><span class="line">		begin</span><br><span class="line">		   CRC_out = CRC_out &gt;&gt; 1;</span><br><span class="line">			CRC_out = CRC_out ^ 16&apos;b1010000000000001;//和0xA001异或</span><br><span class="line">			cnt = cnt + 4&apos;b0001;</span><br><span class="line">		end</span><br><span class="line">		</span><br><span class="line">		else begin</span><br><span class="line">			CRC_out = CRC_out &gt;&gt; 1;</span><br><span class="line">			cnt = cnt + 4&apos;b0001;</span><br><span class="line">			end</span><br><span class="line">	end</span><br><span class="line">	</span><br><span class="line">	else begin//一个字节完成，准备计算一个字节</span><br><span class="line">		cnt = 4&apos;b0000;</span><br><span class="line">		N = N+1;		</span><br><span class="line">		start = 0;</span><br><span class="line">		end</span><br><span class="line">end</span><br><span class="line">//八次移位操作结束，准备下一个数据</span><br><span class="line"></span><br><span class="line">//发送的数据全部计算完毕，发出指示信号,等待下一次通讯发送数据</span><br><span class="line">else if((en == 1)&amp;&amp;(over == 0))</span><br><span class="line">begin</span><br><span class="line">		CRC_out[15:8] &lt;= CRC_out[7:0];</span><br><span class="line">		CRC_out[7:0] &lt;= CRC_out[15:8];//高低字节交换</span><br><span class="line">		over = 1;							//CRC码计算完毕指令</span><br><span class="line">		cnt = 4&apos;b0000;</span><br><span class="line">end</span><br><span class="line">//下一次通信开始，将所有值复位准备重新进行计算</span><br><span class="line">else if(enfall == 1)</span><br><span class="line">begin</span><br><span class="line">		over = 0;</span><br><span class="line">		N = 0;</span><br><span class="line">		cnt = 4&apos;b0000;</span><br><span class="line">		CRC_out = 16&apos;b1111111111111111;</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">else error &lt;= 1;</span><br><span class="line"></span><br><span class="line">end</span><br><span class="line">endmodule</span><br></pre></td></tr></table></figure>
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>数据的通信协议是人为定义的，是为了实现某一特定任务设置的。相应的，想要实现通信协议，就要编写相应的协议发送、协议接收和协议校验代码，对发送的每一个字节数据赋予意义。MODBUS-RTU协议只是众多通信协议的一种，但是它们的本质是相同的。希望这篇文章能帮助你进一步理解通信协议。</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>扫这个请我恰汉堡<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/blogImg/zhifubao.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/blogImg/weixin.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -317,143 +205,20 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2021/05/25/串口通信全解（三）/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2021/05/25/只有两篇博文的难产博主/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          只有两篇博文的难产博主
-        
-      </div>
-    </a>
   
   
-    <a href="/2021/05/24/串口通信全解（二）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">串口通信全解（二）</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
+    
 
-  
-
-  
-
-
-
-   
-       <section id="comments" class="comments">
-         <style>
-           .comments{margin:30px;padding:10px;background:#fff}
-           @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-         </style>
-         <div id="vcomment" class="comment"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-  var notify = 'false' == true ? true : false;
-  var verify = 'false' == true ? true : false;
-  new Valine({
-    av: AV,
-    el: '#vcomment',
-    notify: notify,
-    app_id: "r4mQT4d1H7yK6mvMWBC4ujVl-gzGzoHsz",
-    app_key: "UWvPBE6xkdtCgzf26ssyqztV",
-    placeholder: "Just go go",
-    avatar: "mm",
-  });
-</script>
-     </section>
-   
 
           </div>
         </div>
@@ -477,8 +242,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -551,19 +316,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FPGA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设备通讯</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常</a>
+                <a href="javascript:void(0)" class="js-tag color5">设备通信</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设备通信</a>
+                <a href="javascript:void(0)" class="js-tag color5">FPGA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日常</a>
               </li>
             
             <div class="clearfix"></div>
