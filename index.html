@@ -644,257 +644,10 @@
 
 
   
-    <article id="post-串口通信全解（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/07/串口通信全解（一）/">串口通信全解（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/07/串口通信全解（一）/" class="archive-article-date">
-  	<time datetime="2020-08-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="串口通信全解（一）"><a href="#串口通信全解（一）" class="headerlink" title="串口通信全解（一）"></a>串口通信全解（一）</h1><p>大部分人第一次接触串口通信应该都是单片机和PC的通讯，单片机只需要使用一根USB线和电脑连接起来，写好代码之后，通过串口助手就可以和PC实现数据的收发。由于是在设计好的开发板上实现的，很多过程容易被我们忽略，很多人对串口通讯的概念也都比较模糊，但是串口通信在实际的应用中非常广泛，需要我们有比较深刻的理解。经过一段时间的学习，自认为对串口通信的概念有了比较清晰的认识，想在这里和大家分享一下，欢迎批评指正。</p>
-<h2 id="一、串口通信、串行通信和通用串行总线"><a href="#一、串口通信、串行通信和通用串行总线" class="headerlink" title="一、串口通信、串行通信和通用串行总线"></a>一、串口通信、串行通信和通用串行总线</h2><p>串口通信、串行通信和通用串行总线是几个非常用易混淆的概念。</p>
-<p>其中，通用串行总线是USB的全称，与串口通信关系不大，在这里不作详细介绍。</p>
-<p>串行通信包括了异步通信和同步通信。同步通信受时钟信号控制，要求发送端和接收端的时钟信号频率保持一致（时钟同步），由发送端将数据组合起来一起发送，比如I2C和SPI的传输方式。而异步通信每次只发送一个字符的一个比特位，对时钟信号频率没有要求。显然，同步通讯的效率更高，但是稳定性较差，而异步通信虽然效率低，但是可以允许一定的误差。</p>
-<p>串口通信是利用串口进行通信的方式，它是一种异步通信，即串口通信是串行通信的一种实现方式。</p>
-<p><img src="/photo/VN1.png" alt="image-20200807181533010"></p>
-        
-          <a class="article-more-a" href="/2020/08/07/串口通信全解（一）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设备通讯</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习分享</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/07/串口通信全解（一）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-2020-08-05" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/05/2020-08-05/">前言</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/05/2020-08-05/" class="archive-article-date">
-  	<time datetime="2020-08-05T15:17:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>大三一年基本上都在进行FPGA程序的开发，从基础的A/D、D/A模块的使用，再到FFT程序、数字示波器和VGA图像显示，踩过特别多的坑，遇到特别特别多的问题，但是最后捣鼓捣鼓总归能写出点东西来，勉强可以算入门了吧。但是之前的项目没有及时整理成资料，现在再回顾起来有些吃力，觉得很有必要记录下自己的学习过程。正好网站刚刚建成，一方面可以给自己当作学习笔记，另一方面也可以分享给其他想学习的同学。</p>
-<p>最近在调试FPGA的Modbus通信协议，具体的代码已经接近完成，期间对设备通讯的知识有了更深的理解，接下来几天会陆续将我对通讯协议和Verilog代码书写的经验和感悟整理出来。</p>
-<p><img src="/photo/timg%5B4%5D.jpg" alt="Pic"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">FPGA</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设备通讯</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习分享</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/05/2020-08-05/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/03/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/03/hello-world/" class="archive-article-date">
-  	<time datetime="2020-08-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>看到大佬们在自己的网站上分享学习经验，记录学习历程，我决定自己也来搭一个网站。<br>第一次建站，前端后端技术不太行，一开始用树莓派当服务器来建站，界面搞得很简陋。<br>后来干脆就用hexo的模板来搭，加起来一共折腾了三天左右才部署成今天这个样子。<br>网站刚刚建成，很多东西还不是很懂，今后会尝试分享一些个人的学习经验，顺便记录一下自己的生活。</p>
-<p>祝我玩的开心</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">生日快乐</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日常</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/03/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -992,6 +745,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">生日快乐</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日常</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">FPGA</a>
               </li>
              
@@ -1001,14 +762,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习分享</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">生日快乐</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常</a>
               </li>
              
               <li class="article-tag-list-item">
