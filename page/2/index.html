@@ -166,6 +166,99 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-串口通信全解（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/24/串口通信全解（二）/">串口通信全解（二）</a>
+    </h1>
+  
+
+        
+        <a href="/2021/05/24/串口通信全解（二）/" class="archive-article-date">
+  	<time datetime="2021-05-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="串口通信全解（二）："><a href="#串口通信全解（二）：" class="headerlink" title="串口通信全解（二）："></a>串口通信全解（二）：</h1><p>前面我介绍了串口通信的基本概念，这次简单描述一下整个串口通信收发数据的过程。</p>
+<h2 id="一、串口通信参数"><a href="#一、串口通信参数" class="headerlink" title="一、串口通信参数"></a>一、串口通信参数</h2><p><strong>（1）波特率：</strong>每秒钟传送的bit的个数，越高传输速度越快。</p>
+<p><strong>（2）起始位：</strong>是一个指示位，为数据输入从高电平变为低电平的第一个位，后面发送的是数据位。</p>
+<p><strong>（3）数据位：</strong>通信时需要传输的数据，串口通信一般先传低位。</p>
+<p><strong>（4）奇偶校验位：</strong>粗略验证传送数据是否完整的位。</p>
+<p><strong>（5）停止位：</strong>当一帧数据包括校验位传送完后，电平置高，表示传输完成，路线空闲。</p>
+<h2 id="二、器件串口通信过程"><a href="#二、器件串口通信过程" class="headerlink" title="二、器件串口通信过程"></a>二、器件串口通信过程</h2><p><img src="https://img-blog.csdnimg.cn/20190706183722352.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMxNzk5OTgz,size_16,color_FFFFFF,t_70" alt="img"></p>
+<h3 id="接收数据"><a href="#接收数据" class="headerlink" title="接收数据"></a>接收数据</h3><p><strong>串口通信接收时，持续对数据接收线rx电平进行观测，当检测到下降沿且路线状态为空闲时，允许数据接收。</strong></p>
+<p>（这个过程判断至少需要三个状态量：数据输入下降沿指示、路线状态空闲/繁忙指示、接收数据允许信号。）</p>
+<p><strong>下降沿的第一个数据为起始位不做操作，第二位开始为数据位，需要对传输数据进行存储。</strong></p>
+<p>（存储数据需要根据波特率和传输帧长，设置相应的时钟信号和计数值，时钟信号应该为波特率的N倍，计数值持续对时钟信号计数，计数达到对应数据位稳定时存储数据值，建议使用case语句。数据位发送数据长度并不一定是八位，这和上位机发送数据的打包方式有关，需要在实际程序中灵活调整。）</p>
+<p><strong>数据位传输完成后，上位机会根据已经发送的数据有多少个‘1’来发送奇偶校验位。偶校验时，上位机发送的位会使1的总数为偶数，奇校验时相反。而接收端会根据接收到的数据位使用同样方法产生一个位，如果接收端算出的校验位和发送端发送的校验位不相同，然么这次发送一定发生了错误。</strong></p>
+<p>（一般可以使用位异或’^’来计算奇偶校验位。）</p>
+<p><strong>最后接收停止位，各状态指示变量复位。</strong></p>
+<h3 id="发送数据"><a href="#发送数据" class="headerlink" title="发送数据"></a>发送数据</h3><p><strong>串口通信发送时，发送使能后，先将发送线tx电平置为低电平，让接收端做好接受准备，发送数据位时，使用和接收时相同的方法，配置好时钟和计数值。根据发送的数据计算出奇偶校验位，再将tx电平拉高，停止发送。等待下一个使能信号。</strong></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设备通讯</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习分享</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/05/24/串口通信全解（二）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-串口通信全解（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -530,19 +623,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">生日快乐</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">生日快乐</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日常</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -610,11 +703,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             </li>
           
             <li class="search-li">
-              <a href="http://www.pengzhihui.xyz/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>彭稚晖的个人站</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>鲍温霞的小站</a>
+              <a href="https://zone-orz.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>鲍温霞的小站</a>
             </li>
           
         </ul>
