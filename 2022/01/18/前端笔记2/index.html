@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://yoursite.com/photo/image-20220118104303893.png">
 <meta property="og:image" content="http://yoursite.com/photo/image-20220118104404333.png">
 <meta property="og:image" content="http://yoursite.com/photo/image-20220118151034339.png">
-<meta property="og:updated_time" content="2022-01-18T08:06:39.872Z">
+<meta property="og:updated_time" content="2022-01-18T08:14:54.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端学习笔记: HTML+CSS (day2)">
 <meta name="twitter:description" content="1.HTML语法规范1.1基本语法概述HTML标签是由尖括号包围的关键词，所有的标签都必须出现在&amp;lt;&amp;gt;中， 标签大部分情况下成对出现，称为双标签 1&amp;lt;html&amp;gt;&amp;lt;/html&amp;gt;  有些特殊的标签必须是单标签（极少情况），例如 1&amp;lt;br/&amp;gt;  称之为单标签 1.2 标签关系双标签关系可以分类两类：包含关系和并列关系 包含关系 123&amp;lt;head&amp;gt;">
@@ -360,26 +360,37 @@
 
 <p>链接分类：</p>
 <ol>
-<li><p>外部链接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;http://www.baidu.com&quot; target=&quot;_self&quot;&gt; 百度&lt;/a&gt;</span><br><span class="line">在本窗口打开</span><br><span class="line">&lt;a href=&quot;http://www.baidu.com&quot; target=&quot;_blank&quot;&gt; 百度&lt;/a&gt;</span><br><span class="line">在新窗口打开</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>内部链接：网站内部页面之间的相互链接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;html01.html&quot; target=&quot;_blank&quot;&gt; 第一个代码 &lt;/a&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>空链接#</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#&quot;&gt; 未完成代码 &lt;/a&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>下载链接：href里面的地址是一个文件或者压缩包，会下载这个文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;img.zip&quot;&gt; 下载链接 &lt;/a&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>网页元素链接：在各种网页元素中添加超链接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;http://www.baidu.com&quot; &gt; &lt;img src=&quot;img,jpg&quot;/&gt; &lt;/a&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>锚点链接：点击链接快速定位到页面中的某个位置（网页书签）</p>
-<p>在链接文本的href属性中，设置属性值为#名字的形式，如&lt;a href =”#two”&gt;第二集&lt;/a&gt;</p>
-<p>找到目标位置标签，里面添加一个id属性= 刚才的名字，如：&lt;h3 id=”two”&gt;第二集介绍&lt;/h3&gt;</p>
-</li>
+<li>外部链接</li>
 </ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;http://www.baidu.com&quot; target=&quot;_self&quot;&gt; 百度&lt;/a&gt;</span><br><span class="line">在本窗口打开</span><br><span class="line">&lt;a href=&quot;http://www.baidu.com&quot; target=&quot;_blank&quot;&gt; 百度&lt;/a&gt;</span><br><span class="line">在新窗口打开</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>内部链接：网站内部页面之间的相互链接</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;html01.html&quot; target=&quot;_blank&quot;&gt; 第一个代码 &lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>空链接#</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#&quot;&gt; 未完成代码 &lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>下载链接：href里面的地址是一个文件或者压缩包，会下载这个文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;img.zip&quot;&gt; 下载链接 &lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>网页元素链接：在各种网页元素中添加超链接</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;http://www.baidu.com&quot; &gt; &lt;img src=&quot;img,jpg&quot;/&gt; &lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>锚点链接：点击链接快速定位到页面中的某个位置（网页书签）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href =&quot;#two&quot;&gt;目标链接名&lt;/a&gt;</span><br><span class="line">&lt;h3 id=&quot;two&quot;&gt;目标标题&lt;/h3&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 在链接文本的href属性中，设置属性值为#名字的形式，如&lt;a href =”#two”&gt;第二集&lt;/a&gt;</p>
+<p> 找到目标位置标签，里面添加一个id属性= 刚才的名字，如：&lt;h3 id=”two”&gt;第二集介绍&lt;/h3&gt;</p>
 <h2 id="4-8-图像标签和路径（重点）"><a href="#4-8-图像标签和路径（重点）" class="headerlink" title="4.8 图像标签和路径（重点）"></a>4.8 图像标签和路径（重点）</h2><p><strong>目录文件夹：</strong>就是普通文件夹，里面存放了我们做页面所需要的相关素材。</p>
 <p><strong>根目录：</strong>打开目录文件夹的第一层就是根目录。</p>
 <p><strong>相对路径：</strong>以引用文件所在位置为参考基础，而建立出的目录路径。</p>
@@ -710,19 +721,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">设备通信 - 学习分享</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Web前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
             
             <div class="clearfix"></div>
