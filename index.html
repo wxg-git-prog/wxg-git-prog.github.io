@@ -166,6 +166,133 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-前端笔记4：列表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/28/前端笔记4：列表/">前端学习笔记: HTML+CSS (day4)</a>
+    </h1>
+  
+
+        
+        <a href="/2022/01/28/前端笔记4：列表/" class="archive-article-date">
+  	<time datetime="2022-01-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h1><p><strong>表格是用来显示数据的，列表就是用来布局的</strong></p>
+<p>列表可以分为三大类：有序列表、无序列表和自定义列表。</p>
+<h2 id="1-无序列表"><a href="#1-无序列表" class="headerlink" title="1. 无序列表"></a>1. 无序列表</h2><p>&lt;ul&gt;标签表示HTML页面中项目的无序列表，列表项使用&lt;li&gt;标签定义。</p>
+<p>基本语法格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li&gt;列表项1&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;列表项2&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;列表项3&lt;/li&gt;</span><br><span class="line">	...</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>无序列表各个列表项之间没有顺序级别之分，是并列的。</li>
+<li>&lt;ul&gt;&lt;/ul&gt;中只能嵌套&lt;li&gt;&lt;/li&gt;，直接在&lt;ul&gt;&lt;/ul&gt;标签中输入其他标签或者文字的做法是不被允许的。</li>
+<li>&lt;li&gt;&lt;/li&gt;之间相当于一个容器，可以容纳所有元素。</li>
+<li>无序列表会带有自己的样式属性，但在实际使用时，我们会使用CSS来设置。</li>
+</ol>
+<h2 id="2-有序列表"><a href="#2-有序列表" class="headerlink" title="2. 有序列表"></a>2. 有序列表</h2><p>有序列表是有排列顺序的列表，其各个列表项会按照一定的顺序排列定义。</p>
+<p>有序列表的基本语法格式如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">	&lt;li&gt;列表项1&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;列表项2&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;列表项3&lt;/li&gt;</span><br><span class="line">	...</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure>
+
+<p>规则与无序列表相似。</p>
+<h2 id="3-自定义列表"><a href="#3-自定义列表" class="headerlink" title="3. 自定义列表"></a>3. 自定义列表</h2><p>自定义列表的使用场景：</p>
+<p>自定义列表常用于对术语或名词进行解释和描述，定义列表的列表项前没有任何项目符号。</p>
+<p>在HTML标签中，&lt;dl&gt;标签用于定义描述列表，该标签与&lt;dt&gt;(定义项目/名字)和&lt;dd&gt;(描述每一个项目/名字)一起使用。</p>
+<p>基本语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dl&gt;</span><br><span class="line">	&lt;dt&gt;名词&lt;/dt&gt;</span><br><span class="line">	&lt;dd&gt;名词解释1&lt;/dd&gt;</span><br><span class="line">	&lt;dd&gt;名词解释2&lt;/dd&gt;</span><br><span class="line">&lt;/dl&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>dl：大佬    dt：带头    dd：弟弟</strong></p>
+<h2 id="4-列表总结"><a href="#4-列表总结" class="headerlink" title="4. 列表总结"></a>4. 列表总结</h2><table>
+<thead>
+<tr>
+<th>标签名</th>
+<th>定义</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;ul&gt;  &lt;/ul&gt;</td>
+<td>无序标签</td>
+<td>里面只能包含li，没有顺序，使用较多，li里面可以包含任何标签</td>
+</tr>
+<tr>
+<td>&lt;ol&gt;  &lt;/ol&gt;</td>
+<td>有序标签</td>
+<td>里面只能包含li，有顺序，使用相对较少，li里面可以包含任何标签</td>
+</tr>
+<tr>
+<td>&lt;dl&gt;  &lt;/dl&gt;</td>
+<td>自定义标签</td>
+<td>里面只能包含dt和dd，dt和dd可以放任何标签</td>
+</tr>
+</tbody></table>
+<p>注意无序列表和自定义列表的使用场景。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习分享</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Web前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/01/28/前端笔记4：列表/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-前端笔记3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -624,101 +751,9 @@
 
 
   
-    <article id="post-串口通信全解（三）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/11/串口通信全解（三）/">串口通信全解（三）</a>
-    </h1>
-  
-
-        
-        <a href="/2021/06/11/串口通信全解（三）/" class="archive-article-date">
-  	<time datetime="2021-06-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="串口通信全解（三）"><a href="#串口通信全解（三）" class="headerlink" title="串口通信全解（三）"></a>串口通信全解（三）</h1><p>介绍完了串口通信的基础和通信时序，已经可以实现数据的传输。本文要介绍的通信协议是通信双方对传输数据格式的一种规则和约定，相当于机器和机器之间交流的语言。有了通信协议，不仅可以增加通信的可靠性，还可以实现更多的功能。接下来将使用MODBUS-RTU工控协议作例子进行讲解。</p>
-<h2 id="MODBUS-RTU简介"><a href="#MODBUS-RTU简介" class="headerlink" title="MODBUS-RTU简介"></a>MODBUS-RTU简介</h2><p>Modbus是一种<strong>串行通信协议</strong>，是Modicon公司（现在的施耐德电气 Schneider Electric）于1979年为使用可编程逻辑控制器（PLC）通信而发表。<strong>Modbus已经成为工业领域通信协议的业界标准（Defacto），并且现在是工业电子设备之间常用的连接方式。</strong>如果要开发工控设备，学习和能够使用MODBUS协议十分重要。</p>
-<p>Modbus协议目前存在用于<a href="https://baike.baidu.com/item/%E4%B8%B2%E5%8F%A3" target="_blank" rel="noopener">串口</a>、<a href="https://baike.baidu.com/item/%E4%BB%A5%E5%A4%AA%E7%BD%91" target="_blank" rel="noopener">以太网</a>以及其他支持<a href="https://baike.baidu.com/item/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">互联网协议</a>的网络的版本。串口的Modbus协议包括Modbus RTU和Modbus ASCII。以太网的Modbus协议主要是Modbus-TCP。</p>
-<p>本人目前使用的是MODBUS-RTU协议。</p>
-<h2 id="MODBUS-RTU结构"><a href="#MODBUS-RTU结构" class="headerlink" title="MODBUS-RTU结构"></a>MODBUS-RTU结构</h2><p>MODBUS-RTU的协议结构由<strong>“设备地址 + 功能码 + 数据码 + 校验码”</strong>组成。</p>
-<ul>
-<li><p><strong>设备地址：</strong> 长度为一个字节。范围是0-255（其中有效范围是1-247，其他有特殊用途，比如255是广播地址)，意义在于选择应答此次指令的从设备，相当于先点名来指派任务。</p>
-</li>
-<li><p><strong>功能码：</strong> 长度为一个字节。不同功能码对应不同功能，发送了功能码，就相当于告诉了从设备将要执行的任务类型。常用功能码有03和06，03功能为读取设备寄存器数据，06功能为将数据写入寄存器。</p>
-</li>
-<li><p><strong>数据码：</strong>一般占用四个字节。根据功能码不同，有不同结构，将会在后续的实例中进行说明。</p>
-</li>
-<li><p><strong>校验码：</strong>占用两个字节。为了保证指令没有发生错误，需要把前面的数据进行计算看数据是否一致，如果一致，就说明这帧数据是正确的，再进行回复。如果不一样，说明这帧数据在传输的时候出了问题，不需要进行操作。MODBUS-RTU的校验码为CRC校验。</p>
-</li>
-</ul>
-<p>下面使用两种常用的功能码进行举例说明MODBUS-RTU的数据包结构。</p>
-        
-          <a class="article-more-a" href="/2021/06/11/串口通信全解（三）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">设备通信 - 学习分享</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/11/串口通信全解（三）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页;</a>
     </nav>
   
 

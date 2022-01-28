@@ -12,7 +12,7 @@
 <meta name="keywords" content="FPGA,程序设计">
 <meta property="og:type" content="website">
 <meta property="og:title" content="王薪贵的个人站">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="王薪贵的个人站">
 <meta property="og:description" content="苏州大学光电科学与工程学院电子信息科学与技术专业">
 <meta property="og:locale" content="default">
@@ -166,45 +166,29 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-串口通信全解（三）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/11/串口通信全解（三）/">串口通信全解（三）</a>
+      <a class="article-title" href="/2020/08/03/hello-world/">Hello World</a>
     </h1>
   
 
         
-        <a href="/2021/06/11/串口通信全解（三）/" class="archive-article-date">
-  	<time datetime="2021-06-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-11</time>
+        <a href="/2020/08/03/hello-world/" class="archive-article-date">
+  	<time datetime="2020-08-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="串口通信全解（三）"><a href="#串口通信全解（三）" class="headerlink" title="串口通信全解（三）"></a>串口通信全解（三）</h1><p>介绍完了串口通信的基础和通信时序，已经可以实现数据的传输。本文要介绍的通信协议是通信双方对传输数据格式的一种规则和约定，相当于机器和机器之间交流的语言。有了通信协议，不仅可以增加通信的可靠性，还可以实现更多的功能。接下来将使用MODBUS-RTU工控协议作例子进行讲解。</p>
-<h2 id="MODBUS-RTU简介"><a href="#MODBUS-RTU简介" class="headerlink" title="MODBUS-RTU简介"></a>MODBUS-RTU简介</h2><p>Modbus是一种<strong>串行通信协议</strong>，是Modicon公司（现在的施耐德电气 Schneider Electric）于1979年为使用可编程逻辑控制器（PLC）通信而发表。<strong>Modbus已经成为工业领域通信协议的业界标准（Defacto），并且现在是工业电子设备之间常用的连接方式。</strong>如果要开发工控设备，学习和能够使用MODBUS协议十分重要。</p>
-<p>Modbus协议目前存在用于<a href="https://baike.baidu.com/item/%E4%B8%B2%E5%8F%A3" target="_blank" rel="noopener">串口</a>、<a href="https://baike.baidu.com/item/%E4%BB%A5%E5%A4%AA%E7%BD%91" target="_blank" rel="noopener">以太网</a>以及其他支持<a href="https://baike.baidu.com/item/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">互联网协议</a>的网络的版本。串口的Modbus协议包括Modbus RTU和Modbus ASCII。以太网的Modbus协议主要是Modbus-TCP。</p>
-<p>本人目前使用的是MODBUS-RTU协议。</p>
-<h2 id="MODBUS-RTU结构"><a href="#MODBUS-RTU结构" class="headerlink" title="MODBUS-RTU结构"></a>MODBUS-RTU结构</h2><p>MODBUS-RTU的协议结构由<strong>“设备地址 + 功能码 + 数据码 + 校验码”</strong>组成。</p>
-<ul>
-<li><p><strong>设备地址：</strong> 长度为一个字节。范围是0-255（其中有效范围是1-247，其他有特殊用途，比如255是广播地址)，意义在于选择应答此次指令的从设备，相当于先点名来指派任务。</p>
-</li>
-<li><p><strong>功能码：</strong> 长度为一个字节。不同功能码对应不同功能，发送了功能码，就相当于告诉了从设备将要执行的任务类型。常用功能码有03和06，03功能为读取设备寄存器数据，06功能为将数据写入寄存器。</p>
-</li>
-<li><p><strong>数据码：</strong>一般占用四个字节。根据功能码不同，有不同结构，将会在后续的实例中进行说明。</p>
-</li>
-<li><p><strong>校验码：</strong>占用两个字节。为了保证指令没有发生错误，需要把前面的数据进行计算看数据是否一致，如果一致，就说明这帧数据是正确的，再进行回复。如果不一样，说明这帧数据在传输的时候出了问题，不需要进行操作。MODBUS-RTU的校验码为CRC校验。</p>
-</li>
-</ul>
-<p>下面使用两种常用的功能码进行举例说明MODBUS-RTU的数据包结构。</p>
-        
-          <a class="article-more-a" href="/2021/06/11/串口通信全解（三）/#more">more >></a>
-        
+        <p>看到大佬们在自己的网站上分享学习经验，记录学习历程，我决定自己也来搭一个网站。<br>第一次建站，前端后端技术不太行，一开始用树莓派当服务器来建站，界面搞得很简陋。<br>后来干脆就用hexo的模板来搭，加起来一共折腾了三天左右才部署成今天这个样子。<br>网站刚刚建成，很多东西还不是很懂，今后会尝试分享一些个人的学习经验，顺便记录一下自己的生活。</p>
+<p>祝我玩的开心</p>
+
       
 
       
@@ -217,82 +201,9 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">设备通信 - 学习分享</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">生日快乐</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/11/串口通信全解（三）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-只有两篇博文的难产博主" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/25/只有两篇博文的难产博主/">只有两篇博文的难产博主</a>
-    </h1>
-  
-
-        
-        <a href="/2021/05/25/只有两篇博文的难产博主/" class="archive-article-date">
-  	<time datetime="2021-05-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="只有两篇博文的难产博主"><a href="#只有两篇博文的难产博主" class="headerlink" title="只有两篇博文的难产博主"></a>只有两篇博文的难产博主</h1><p>上次发博还是20年8月，本以为几周就可以把串口通信部分讲完，结果大半年过去了都没有写第二篇，成了名副其实的难产博主。最近需要把通信协议这一块的知识输出一下，就先补了一篇，最后一篇这两天就安排上。</p>
-<p>王薪贵的个人站域名增加<a href="http://www.wangxingui.com/" target="_blank" rel="noopener">www.wangxingui.com</a></p>
-<p>（把.com买下来争取多写点文章）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日常</a>
         		</li>
@@ -304,271 +215,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/05/25/只有两篇博文的难产博主/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-串口通信全解（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/24/串口通信全解（二）/">串口通信全解（二）</a>
-    </h1>
-  
-
-        
-        <a href="/2021/05/24/串口通信全解（二）/" class="archive-article-date">
-  	<time datetime="2021-05-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="串口通信全解（二）："><a href="#串口通信全解（二）：" class="headerlink" title="串口通信全解（二）："></a>串口通信全解（二）：</h1><p>前面我介绍了串口通信的基本概念，这次简单描述一下整个串口通信收发数据的过程。</p>
-<h2 id="一、串口通信参数"><a href="#一、串口通信参数" class="headerlink" title="一、串口通信参数"></a>一、串口通信参数</h2><p><strong>（1）波特率：</strong>每秒钟传送的bit的个数，越高传输速度越快。</p>
-<p><strong>（2）起始位：</strong>是一个指示位，为数据输入从高电平变为低电平的第一个位，后面发送的是数据位。</p>
-<p><strong>（3）数据位：</strong>通信时需要传输的数据，串口通信一般先传低位。</p>
-<p><strong>（4）奇偶校验位：</strong>粗略验证传送数据是否完整的位。</p>
-<p><strong>（5）停止位：</strong>当一帧数据包括校验位传送完后，电平置高，表示传输完成，路线空闲。</p>
-<h2 id="二、器件串口通信过程"><a href="#二、器件串口通信过程" class="headerlink" title="二、器件串口通信过程"></a>二、器件串口通信过程</h2><p><img src="https://img-blog.csdnimg.cn/20190706183722352.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMxNzk5OTgz,size_16,color_FFFFFF,t_70" alt="img"></p>
-<h3 id="接收数据"><a href="#接收数据" class="headerlink" title="接收数据"></a>接收数据</h3><p><strong>串口通信接收时，持续对数据接收线rx电平进行观测，当检测到下降沿且路线状态为空闲时，允许数据接收。</strong></p>
-<p>（这个过程判断至少需要三个状态量：数据输入下降沿指示、路线状态空闲/繁忙指示、接收数据允许信号。）</p>
-<p><strong>下降沿的第一个数据为起始位不做操作，第二位开始为数据位，需要对传输数据进行存储。</strong></p>
-<p>（存储数据需要根据波特率和传输帧长，设置相应的时钟信号和计数值，时钟信号应该为波特率的N倍，计数值持续对时钟信号计数，计数达到对应数据位稳定时存储数据值，建议使用case语句。数据位发送数据长度并不一定是八位，这和上位机发送数据的打包方式有关，需要在实际程序中灵活调整。）</p>
-<p><strong>数据位传输完成后，上位机会根据已经发送的数据有多少个‘1’来发送奇偶校验位。偶校验时，上位机发送的位会使1的总数为偶数，奇校验时相反。而接收端会根据接收到的数据位使用同样方法产生一个位，如果接收端算出的校验位和发送端发送的校验位不相同，然么这次发送一定发生了错误。</strong></p>
-<p>（一般可以使用位异或’^’来计算奇偶校验位。）</p>
-<p><strong>最后接收停止位，各状态指示变量复位。</strong></p>
-<h3 id="发送数据"><a href="#发送数据" class="headerlink" title="发送数据"></a>发送数据</h3><p><strong>串口通信发送时，发送使能后，先将发送线tx电平置为低电平，让接收端做好接受准备，发送数据位时，使用和接收时相同的方法，配置好时钟和计数值。根据发送的数据计算出奇偶校验位，再将tx电平拉高，停止发送。等待下一个使能信号。</strong></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设备通讯</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习分享</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/05/24/串口通信全解（二）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-串口通信全解（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/07/串口通信全解（一）/">串口通信全解（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/07/串口通信全解（一）/" class="archive-article-date">
-  	<time datetime="2020-08-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="串口通信全解（一）"><a href="#串口通信全解（一）" class="headerlink" title="串口通信全解（一）"></a>串口通信全解（一）</h1><p>大部分人第一次接触串口通信应该都是单片机和PC的通讯，单片机只需要使用一根USB线和电脑连接起来，写好代码之后，通过串口助手就可以和PC实现数据的收发。由于是在设计好的开发板上实现的，很多过程容易被我们忽略，很多人对串口通讯的概念也都比较模糊，但是串口通信在实际的应用中非常广泛，需要我们有比较深刻的理解。经过一段时间的学习，自认为对串口通信的概念有了比较清晰的认识，想在这里和大家分享一下，欢迎批评指正。</p>
-<h2 id="一、串口通信、串行通信和通用串行总线"><a href="#一、串口通信、串行通信和通用串行总线" class="headerlink" title="一、串口通信、串行通信和通用串行总线"></a>一、串口通信、串行通信和通用串行总线</h2><p>串口通信、串行通信和通用串行总线是几个非常用易混淆的概念。</p>
-<p>其中，通用串行总线是USB的全称，与串口通信关系不大，在这里不作详细介绍。</p>
-<p>串行通信包括了异步通信和同步通信。同步通信受时钟信号控制，要求发送端和接收端的时钟信号频率保持一致（时钟同步），由发送端将数据组合起来一起发送，比如I2C和SPI的传输方式。而异步通信每次只发送一个字符的一个比特位，对时钟信号频率没有要求。显然，同步通讯的效率更高，但是稳定性较差，而异步通信虽然效率低，但是可以允许一定的误差。</p>
-<p>串口通信是利用串口进行通信的方式，它是一种异步通信，即串口通信是串行通信的一种实现方式。</p>
-<p><img src="/photo/VN1.png" alt="image-20200807181533010"></p>
-        
-          <a class="article-more-a" href="/2020/08/07/串口通信全解（一）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设备通讯</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习分享</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/07/串口通信全解（一）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-2020-08-05" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/05/2020-08-05/">前言</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/05/2020-08-05/" class="archive-article-date">
-  	<time datetime="2020-08-05T15:17:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>大三一年基本上都在进行FPGA程序的开发，从基础的A/D、D/A模块的使用，再到FFT程序、数字示波器和VGA图像显示，踩过特别多的坑，遇到特别特别多的问题，但是最后捣鼓捣鼓总归能写出点东西来，勉强可以算入门了吧。但是之前的项目没有及时整理成资料，现在再回顾起来有些吃力，觉得很有必要记录下自己的学习过程。正好网站刚刚建成，一方面可以给自己当作学习笔记，另一方面也可以分享给其他想学习的同学。</p>
-<p>最近在调试FPGA的Modbus通信协议，具体的代码已经接近完成，期间对设备通讯的知识有了更深的理解，接下来几天会陆续将我对通讯协议和Verilog代码书写的经验和感悟整理出来。</p>
-<p><img src="/photo/timg%5B4%5D.jpg" alt="Pic"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">FPGA</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设备通讯</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习分享</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/05/2020-08-05/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/08/03/hello-world/">展开全文 >></a>
         </p>
       
 
@@ -601,7 +248,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">下一页;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
     </nav>
   
 
