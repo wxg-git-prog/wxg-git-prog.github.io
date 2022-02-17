@@ -166,6 +166,128 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-python程序的linux系统打包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/09/python程序的linux系统打包/">打包python程序为独立可执行的单文件</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/09/python程序的linux系统打包/" class="archive-article-date">
+  	<time datetime="2021-09-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="打包python程序为独立可执行的单文件"><a href="#打包python程序为独立可执行的单文件" class="headerlink" title="打包python程序为独立可执行的单文件"></a>打包python程序为独立可执行的单文件</h1><p>最近有需求要将python程序打包成可独立运行的单文件（exe等），踩了很多坑，查了很多资料，梳理得比较清楚，这里将方法分享出来供大家参考。</p>
+<p>核心打包工具：<strong>Pyinstaller</strong></p>
+<p>首先明确打包的程序需要在什么系统下运行，最好在相同的系统下打包。因为在windows下打包，Pyinstaller自动生成windows可用的.exe文件，而linux会生成无后缀名的可执行文件。</p>
+<p>我这个需求是要让代码能够在linux下运行，所以就以linux为例子来进行说明。</p>
+<p>首先搭建Python环境，方法可参考下方链接。</p>
+<p><a href="https://blog.csdn.net/qq_15260769/article/details/88822620" target="_blank" rel="noopener">初学Ubuntu：升级python到3.7_任昌伟-CSDN博客_ubuntu升级python3.7</a></p>
+<p>安装完Python、配置好环境、确定程序可以正常运行后，安装python程序打包软件Pyinstaller。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install Pyinstaller</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后cd到需要打包的目录下，举个例子，需要打包程序为main.py</p>
+<p>输入指令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller -F main.py</span><br><span class="line">## -F 为打包成单文件，-D 则会额外多出很多环境依赖</span><br></pre></td></tr></table></figure>
+
+<p>执行时可能会发生如下错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> line 967, in get_python_library_path</span><br><span class="line">    raise IOError(msg)</span><br><span class="line">OSError: Python library not found: libpython3.7.so, libpython3.7.so.1.0, libpython3.7m.so.1.0, libpython3.7m.so, libpython3.7mu.so.1.0</span><br><span class="line">    This would mean your Python installation doesn&apos;t come with proper library files.</span><br><span class="line">    This usually happens by missing development package, or unsuitable build parameters of Python installation.</span><br><span class="line"></span><br><span class="line">    * On Debian/Ubuntu, you would need to install Python development packages</span><br><span class="line">      * apt-get install python3-dev</span><br><span class="line">      * apt-get install python-dev</span><br><span class="line">    * If you&apos;re building Python by yourself, please rebuild your Python with `--enable-shared` (or, `--enable-framework` on Darwin)</span><br></pre></td></tr></table></figure>
+
+<p>这是因为没有找到python的库地址，详细可见<a href="https://www.cnpython.com/qa/95053" target="_blank" rel="noopener">Python3.7:加载共享库时出错：libpython3.7m.so.1.0 - 问答 - Python中文网 (cnpython.com)</a></p>
+<p>确保安装过python3-dev后，可以手动指定库路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib</span><br><span class="line">##缺点在于每一次都得手动指定</span><br></pre></td></tr></table></figure>
+
+<p>或者运行<code>ldconfig</code>将路径添加到链接器缓存：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ldconfig /usr/local/lib </span><br><span class="line">##本人比较懒，上一个可以用这个没有试过</span><br></pre></td></tr></table></figure>
+
+<p>这样等待程序打包完成即可。大部分程序打包到这里就结束了，但不是所有😔，如果这么顺利的结束了也就不会有这篇文章了。</p>
+<p>打包好的程序存放在dist文件下，使用./main执行报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OSError: /tmp/_MEIyORC7e/audresample/core/bin/libaudresample.so: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure>
+
+<p>这是在使用 -F 打包的过程中，部分库没能够打包进去，这里缺的是libaudresample.so，如果使用的是 -D，直接把缺的文件放到dist文件夹下就好了。但是目标是生成可执行单文件，那能不能对 -D 生成的多文件再打包成成一个单文件呢？（windows下有一个软件叫Enigma Virtual Box，二次打包很好用），在查阅了大量的论坛文章后，没能找到在linux下高效可行的打包方法，那么就一定要用 -F，寻找一个可以手动补充缺失文件的方法，网上说的很多方法都不好用。</p>
+<p>在一些摸索之后，我找到了一个手动添加任意文件/文件夹的方法，难度等同复制粘贴到同一目录。修改打包生成的.spec文件。.spec文件部分：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">a = Analysis([&apos;main.py&apos;],</span><br><span class="line">             pathex=[&apos;/home/wxg/Downloads/11&apos;],</span><br><span class="line">             binaries=[],</span><br><span class="line">             datas=[],</span><br><span class="line">             hiddenimports=[],</span><br><span class="line">             hookspath=[],</span><br><span class="line">             hooksconfig=&#123;&#125;,</span><br><span class="line">             runtime_hooks=[],</span><br><span class="line">             excludes=[],</span><br><span class="line">             win_no_prefer_redirects=False,</span><br><span class="line">             win_private_assemblies=False,</span><br><span class="line">             cipher=block_cipher,</span><br><span class="line">             noarchive=False)</span><br></pre></td></tr></table></figure>
+
+<p>我们只需要修改其中的binaries和datas就可以解决大部分问题</p>
+<p>缺少.so库、python库等添加目录到datas中，缺少txt、exe等添加到binaries中。添加格式为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">文件：datas=[(&apos;/home/wxg/Downloads/libsoxr.so.0&apos;,&apos;.&apos;), (&apos;/home/wxg/Downloads/libaudresample.so&apos;,&apos;.&apos;)]</span><br><span class="line">##(&apos;文件目录&apos;, &apos;.&apos;)</span><br><span class="line">##多个文件用,分割</span><br><span class="line"></span><br><span class="line">文件夹：datas=[(&apos;/home/wxg/Downloads/scipy&apos;,&apos;scipy&apos;)]</span><br><span class="line">##(&apos;文件夹目录&apos;, &apos;文件夹名称&apos;)</span><br></pre></td></tr></table></figure>
+
+<p>再重新使用spec打包就可以了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller -F main.spec</span><br></pre></td></tr></table></figure>
+
+<p>值得一提的是，打包成单文件后文件体积较大，程序每次运行需要较长时间才能启动。这个问题目前没有较好的解决办法。只能建议将文件作为本地服务器服务，服务开启后使用客户端调用服务器算法，不需要再等待算法重新启动。轻量服务推荐使用tornado、flask</p>
+<p>欢迎留言指正，不足之处希望指出、补充。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习分享</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ubuntu</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/09/python程序的linux系统打包/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-串口通信全解（三）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -383,11 +505,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设备通讯</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习分享</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习分享</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设备通讯</a>
         		</li>
       		
 		</ul>
@@ -469,11 +591,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设备通讯</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习分享</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习分享</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设备通讯</a>
         		</li>
       		
 		</ul>
@@ -484,91 +606,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/08/07/串口通信全解（一）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-2020-08-05" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/05/2020-08-05/">前言</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/05/2020-08-05/" class="archive-article-date">
-  	<time datetime="2020-08-05T15:17:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>大三一年基本上都在进行FPGA程序的开发，从基础的A/D、D/A模块的使用，再到FFT程序、数字示波器和VGA图像显示，踩过特别多的坑，遇到特别特别多的问题，但是最后捣鼓捣鼓总归能写出点东西来，勉强可以算入门了吧。但是之前的项目没有及时整理成资料，现在再回顾起来有些吃力，觉得很有必要记录下自己的学习过程。正好网站刚刚建成，一方面可以给自己当作学习笔记，另一方面也可以分享给其他想学习的同学。</p>
-<p>最近在调试FPGA的Modbus通信协议，具体的代码已经接近完成，期间对设备通讯的知识有了更深的理解，接下来几天会陆续将我对通讯协议和Verilog代码书写的经验和感悟整理出来。</p>
-<p><img src="/photo/timg%5B4%5D.jpg" alt="Pic"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">FPGA</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设备通讯</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习分享</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/05/2020-08-05/">展开全文 >></a>
         </p>
       
 
@@ -700,23 +737,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FPGA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设备通讯</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习分享</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">生日快乐</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -728,11 +749,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">设备通信 - 学习分享</a>
+                <a href="javascript:void(0)" class="js-tag color5">FPGA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设备通讯</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">生日快乐</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日常</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Web前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">设备通信 - 学习分享</a>
               </li>
             
             <div class="clearfix"></div>
